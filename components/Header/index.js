@@ -14,7 +14,7 @@ function Header() {
     header.classList.add('header');
     const date = document.createElement('span');
     date.classList.add('date');
-    const LambdaTimes = document.createElement('h3');
+    const LambdaTimes = document.createElement('h1');
     const temp = document.createElement('span');
     temp.classList.add('temp');
 
@@ -22,9 +22,12 @@ function Header() {
     LambdaTimes.textContent = 'Lambda Times';
     temp.textContent = '98°';
 
-    header.appendChild('date');
-    header.appendChild('LambdaTimes');
-    header.appendChild('temp');
+    header.appendChild(date);
+    header.appendChild(LambdaTimes);
+    header.appendChild(temp);
 
     return header;
 }
+
+const headerComponent = Header();
+document.querySelector('.header-container').appendChild(headerComponent)
