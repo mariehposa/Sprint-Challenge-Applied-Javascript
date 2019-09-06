@@ -17,7 +17,9 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
             document.querySelector('.topics').appendChild(topicComponent);
         });
     })
-    .catch();
+    .catch(error =>{
+        console.log(error);
+    });
 
 function tabComponent(topic) {
     const tab = document.createElement('div');
