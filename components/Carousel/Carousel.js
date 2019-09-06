@@ -34,4 +34,10 @@ function carouselComponent() {
   rightButton = document.createElement('div');
   rightButton.classList.add('right-button');
 
+  carousel.appendChild(leftButton);
+  carousel.appendChild(image1);
+  carousel.appendChild(image2);
+  carousel.appendChild(image3);
+  carousel.appendChild(image4);
+  carousel.appendChild(rightButton);
 }
