@@ -17,4 +17,14 @@ function Header() {
     const LambdaTimes = document.createElement('h3');
     const temp = document.createElement('span');
     temp.classList.add('temp');
+
+    date.textContent = 'SMARCH 28, 2019';
+    LambdaTimes.textContent = 'Lambda Times';
+    temp.textContent = '98°';
+
+    header.appendChild('date');
+    header.appendChild('LambdaTimes');
+    header.appendChild('temp');
+
+    
 }
