@@ -10,6 +10,19 @@
 
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
     .then(Response =>{
-        console.log(Response)
+        console.log(Response.data);
+        const topicstorage = Response.data.topics;
+        topicstorage.forEach(topic => {
+            const topicComponent = tabComponent(topic);
+            document.querySelector('.topics').appendChild(topicComponent);
+        });
     })
     .catch();
+
+function tabComponent(topic) {
+    const tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.textContent = topic;
+
+    return tab;
+}
