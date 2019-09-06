@@ -17,39 +17,6 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then(response => {
-        const articlesObject = response.data.articles;
-        const bootsComp = articlesObject.bootstrap.map(cardComponent)
-        const jsComp = articlesObject.javascript.map(cardComponent);
-        const jqueryComp = articlesObject.jquery.map(cardComponent);
-        const nodeComp = articlesObject.node.map(cardComponent);
-        const techComp = articlesObject.technology.map(cardComponent);
-
-        console.log(articlesObject);
-        bootsComp.forEach(element => {
-            document.querySelector('.cards-container').appendChild(element);
-        });
-
-        jsComp.forEach(element => {
-            document.querySelector('.cards-container').appendChild(element);
-        });
-        
-        jqueryComp.forEach(element => {
-            document.querySelector('.cards-container').appendChild(element);
-        });
-
-        nodeComp.forEach(element => {
-            document.querySelector('.cards-container').appendChild(element);
-        });
-
-        techComp.forEach(element => {
-            document.querySelector('.cards-container').appendChild(element);
-        });
-    })
-    .catch(error =>{
-        console.log(error);
-    })
 
 function cardComponent(article) {
     card = document.createElement('div');
@@ -75,3 +42,38 @@ function cardComponent(article) {
 
     return card;
 }
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response => {
+        const articlesObject = response.data.articles;
+        const bootsComp = articlesObject.bootstrap.map(cardComponent)
+        const jsComp = articlesObject.javascript.map(cardComponent);
+        const jqueryComp = articlesObject.jquery.map(cardComponent);
+        const nodeComp = articlesObject.node.map(cardComponent);
+        const techComp = articlesObject.technology.map(cardComponent);
+
+        console.log(articlesObject);
+        
+        bootsComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+
+        jsComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+        
+        jqueryComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+
+        nodeComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+
+        techComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+    })
+    .catch(error =>{
+        console.log(error);
+    })
