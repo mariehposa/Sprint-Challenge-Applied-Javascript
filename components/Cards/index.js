@@ -24,6 +24,7 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         const jsComp = articlesObject.javascript.map(cardComponent);
         const jqueryComp = articlesObject.jquery.map(cardComponent);
         const nodeComp = articlesObject.node.map(cardComponent);
+        const techComp = articlesObject.technology.map(cardComponent);
 
         console.log(articlesObject);
         bootsComp.forEach(element => {
@@ -41,7 +42,10 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
         nodeComp.forEach(element => {
             document.querySelector('.cards-container').appendChild(element);
         });
-        
+
+        techComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
     })
     .catch(error =>{
         console.log(error);
