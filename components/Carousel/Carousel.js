@@ -40,4 +40,6 @@ function carouselComponent() {
   carousel.appendChild(image3);
   carousel.appendChild(image4);
   carousel.appendChild(rightButton);
+
+  return carousel;
 }
