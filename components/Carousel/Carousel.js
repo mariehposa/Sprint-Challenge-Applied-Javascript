@@ -48,3 +48,11 @@ const carouselHolder = carouselComponent();
 document.querySelector('.carousel-container').appendChild(carouselHolder);
 
 document.querySelectorAll('.carousel-container img').forEach(img => img.style.display = 'block');
+
+leftButton.addEventListener('click', a{
+  
+})
+
+rightButton.addEventListener('click', a{
+  
+})
