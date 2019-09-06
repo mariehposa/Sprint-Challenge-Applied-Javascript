@@ -17,3 +17,63 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+function cardComponent(article) {
+    card = document.createElement('div');
+    card.classList.add('card');
+    headline = document.createElement('div');
+    headline.classList.add('headline');
+    author = document.createElement('div');
+    author.classList.add('author');
+    imgContainer = document.createElement('div');
+    imgContainer.classList.add('img-container');
+    image = document.createElement('img');
+    authorsName = document.createElement('span');
+
+    headline.textContent = `${article.headline}`;
+    image.setAttribute('src', article.authorPhoto);
+    authorsName.textContent = `${article.authorName}`;
+
+    imgContainer.appendChild(image);
+    author.appendChild(imgContainer);
+    author.appendChild(authorsName);
+    card.appendChild(headline);
+    card.appendChild(author);
+
+    return card;
+}
+
+axios.get('https://lambda-times-backend.herokuapp.com/articles')
+    .then(response => {
+        const articlesObject = response.data.articles;
+        const bootsComp = articlesObject.bootstrap.map(cardComponent)
+        const jsComp = articlesObject.javascript.map(cardComponent);
+        const jqueryComp = articlesObject.jquery.map(cardComponent);
+        const nodeComp = articlesObject.node.map(cardComponent);
+        const techComp = articlesObject.technology.map(cardComponent);
+
+        console.log(articlesObject);
+        
+        bootsComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+
+        jsComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+        
+        jqueryComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+
+        nodeComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+
+        techComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+    })
+    .catch(error =>{
+        console.log(error);
+    })
