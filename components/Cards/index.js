@@ -21,14 +21,19 @@ axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
         const articlesObject = response.data.articles;
         const bootsComp = articlesObject.bootstrap.map(cardComponent)
-        const jsComp = articlesObject.javascript.map(cardComponent)
+        const jsComp = articlesObject.javascript.map(cardComponent);
+        const jqueryComp = articlesObject.javascript.map(cardComponent)
 
-        // console.log(cardComp);
+        console.log(articlesObject);
         bootsComp.forEach(element => {
             document.querySelector('.cards-container').appendChild(element);
         });
 
         jsComp.forEach(element => {
+            document.querySelector('.cards-container').appendChild(element);
+        });
+        
+        jqueryComp.forEach(element => {
             document.querySelector('.cards-container').appendChild(element);
         });
         
