@@ -26,5 +26,5 @@ function Header() {
     header.appendChild('LambdaTimes');
     header.appendChild('temp');
 
-    
+    return header;
 }
