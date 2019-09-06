@@ -19,6 +19,26 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 function cardComponent() {
+    card = document.createElement('div');
+    card.classList.add('card');
     headline = document.createElement('div');
-    headline.cla
+    headline.classList.add('headline');
+    author = document.createElement('div');
+    author.classList.add('author');
+    imgContainer = document.createElement('div');
+    imgContainer.classList.add('img-container');
+    image = document.createElement('img');
+    authorsName = document.createElement('span');
+
+    headline.textContent = '';
+    image.setAttribute('src', '');
+    authorsName.textContent = '';
+
+    imgContainer.appendChild(image);
+    author.appendChild(imgContainer);
+    author.appendChild(span);
+    card.appendChild(author);
+    card.appendChild(headline);
+
+    return card;
 }
